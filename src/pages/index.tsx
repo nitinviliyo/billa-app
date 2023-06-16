@@ -48,8 +48,6 @@ const ProductListingPage: React.FC = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.post(API_URL, {});
-        console.log(response.data);
-
         setProducts(response.data || []);
         setLoading(false);
       } catch (error) {
@@ -71,6 +69,13 @@ const ProductListingPage: React.FC = () => {
         {" "}
         Electricity <Badge>{products.length}</Badge>{" "}
       </Button>
+      <span style={{ display: "block" }}>
+        Initial recommendations are based on average medium usage as determined
+        by relevant energy regulators, please view the information hover next to
+        the estimated cost box for more information. For a more accurate
+        comparison relevant to your circumstances, please use the Bill Details
+        tab on the results page to enter your most recent energy bill details.
+      </span>
 
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />

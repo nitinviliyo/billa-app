@@ -10,7 +10,7 @@ const API_KEY = '4NKQ3-815C2-8T5Q2-16318-55301';
 
 // Set up CORS headers to allow requests from your React app
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
